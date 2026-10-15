@@ -1,0 +1,627 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "OPENHD",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\CONSUMER_ELECTRONICS\\OPENHD\\UPSTREAM_CLONE",
+    "git": {
+      "head": "f07729b35e273fe3612e1aade030a7a86350d1ac",
+      "url": "https://github.com/OpenHD/OpenHD",
+      "branch": "2.7-evo",
+      "committed_at": "2026-02-28T23:05:15+01:00"
+    }
+  },
+  "metrics": {
+    "files_total": 573,
+    "source_files_scanned": 255,
+    "lines_of_code": 43647,
+    "languages": {
+      ".jpg": 178,
+      ".h": 121,
+      ".cpp": 85,
+      ".pdf": 25,
+      ".hpp": 24,
+      ".txt": 20,
+      ".sh": 18,
+      ".png": 18,
+      "(none)": 17,
+      ".md": 15,
+      ".yml": 12,
+      ".c": 5,
+      ".service": 4,
+      ".xlsx": 4,
+      ".jpeg": 4
+    }
+  },
+  "licence": {
+    "spdx": "GPL-3.0",
+    "class": "B",
+    "source_file": "LICENSE",
+    "redistribution_allowed": false
+  },
+  "dependencies": {
+    "count": 11,
+    "unique": 7,
+    "by_ecosystem": {
+      "native": 11
+    },
+    "list": [
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "OpenHD/ohd_common/CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Poco",
+        "version": "",
+        "source_file": "OpenHD/ohd_interface/CMakeLists.txt",
+        "raw": "find_package(Poco"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "OpenHD/ohd_interface/CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "OpenHD/ohd_telemetry/CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "spdlog",
+        "version": "",
+        "source_file": "OpenHD/ohd_telemetry/CMakeLists.txt",
+        "raw": "find_package(spdlog"
+      },
+      {
+        "ecosystem": "native",
+        "name": "SDL2",
+        "version": "",
+        "source_file": "OpenHD/ohd_telemetry/CMakeLists.txt",
+        "raw": "find_package(SDL2"
+      },
+      {
+        "ecosystem": "native",
+        "name": "PkgConfig",
+        "version": "",
+        "source_file": "OpenHD/ohd_video/CMakeLists.txt",
+        "raw": "find_package(PkgConfig"
+      },
+      {
+        "ecosystem": "native",
+        "name": "PkgConfig",
+        "version": "",
+        "source_file": "OpenHD/ohd_video/CMakeLists.txt",
+        "raw": "find_package(PkgConfig"
+      },
+      {
+        "ecosystem": "native",
+        "name": "LIBCAMERA",
+        "version": "",
+        "source_file": "OpenHD/ohd_video/CMakeLists.txt",
+        "raw": "pkg_check_modules(LIBCAMERA"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "OpenHD/ohd_video/CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Curses",
+        "version": "",
+        "source_file": "OpenHD/tools/mavlink_uart_logger/CMakeLists.txt",
+        "raw": "find_package(Curses"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 50,
+    "files_with_findings": 47,
+    "severity": {
+      "high": 15,
+      "medium": 1,
+      "low": 34
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "package.sh",
+            "line": 61,
+            "cwe": "CWE-732",
+            "snippet": "chmod 777 \"${PKGDIR}etc/profile.d/desktop-truster.sh\""
+          }
+        ]
+      },
+      "A02-CryptographicFailures": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "OpenHD/tools/mavlink_uart_logger/main.cpp",
+            "line": 588,
+            "cwe": "CWE-338",
+            "snippet": "GeneratedMessage generate_random_openhd_message(std::mt19937 &rng, uint8_t sysid, uint8_t compid) {"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 10,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "package.sh",
+            "line": 106,
+            "cwe": "CWE-78",
+            "snippet": "make -j$(nproc)"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/build_cmake.sh",
+            "line": 38,
+            "cwe": "CWE-78",
+            "snippet": "make -j$(nproc)"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/build_rk3588_cross.sh",
+            "line": 123,
+            "cwe": "CWE-78",
+            "snippet": "make -j$(nproc)"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_common/src/config_paths.cpp",
+            "line": 50,
+            "cwe": "CWE-120",
+            "snippet": "strcpy(CONFIG_BASE_PATH, path);"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_common/src/openhd_util.cpp",
+            "line": 77,
+            "cwe": "CWE-78",
+            "snippet": "std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), \"r\"),"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_interface/src/microhard_link.cpp",
+            "line": 292,
+            "cwe": "CWE-78",
+            "snippet": "FILE* pipe = popen(cmd.c_str(), \"r\");"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_interface/src/ohd_interface.cpp",
+            "line": 43,
+            "cwe": "CWE-95",
+            "snippet": "std::string exec(const std::string& cmd) {"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_interface/src/wb_link_helper.cpp",
+            "line": 282,
+            "cwe": "CWE-78",
+            "snippet": "FILE* pipe = popen(script_path, \"r\");"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_telemetry/src/internal/ina219.cc",
+            "line": 119,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(buffer,"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/scripts/setup_orqa_sdk.sh",
+            "line": 17,
+            "cwe": "CWE-78",
+            "snippet": "printf '%s/%s\\n' \"$(pwd)\" \"$path\""
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 33,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_common/inc/openhd_external_device.h",
+            "line": 51,
+            "cwe": "CWE-",
+            "snippet": "// TODO I don't know exactly how to call this"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_common/inc/openhd_link_statistics.hpp",
+            "line": 116,
+            "cwe": "CWE-",
+            "snippet": "int32_t curr_incoming_bitrate;      /*<  todo*/"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_common/inc/openhd_reboot_util.h",
+            "line": 44,
+            "cwe": "CWE-",
+            "snippet": "// TODO"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_common/inc/openhd_util.h",
+            "line": 136,
+            "cwe": "CWE-",
+            "snippet": "* All these string_to_xxx methods are guaranteed to never throw an exception"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_interface/inc/wb_link_helper.h",
+            "line": 226,
+            "cwe": "CWE-",
+            "snippet": "// reacts (TODO: Define a minumum allowed variance for openhd supported"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_interface/inc/wb_link_manager.h",
+            "line": 51,
+            "cwe": "CWE-",
+            "snippet": "// TODO dirty"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_interface/inc/wifi_card.h",
+            "line": 48,
+            "cwe": "CWE-",
+            "snippet": "MT_7921u,    // TODO add support"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_interface/src/ohd_interface.cpp",
+            "line": 111,
+            "cwe": "CWE-",
+            "snippet": "// TODO reason what to do. We do not support dynamically adding wifi cards"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_interface/src/wb_link.cpp",
+            "line": 211,
+            "cwe": "CWE-",
+            "snippet": "txrx_options.enable_auto_switch_tx_card = false;  // TODO remove me"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_interface/src/wb_link_manager.cpp",
+            "line": 146,
+            "cwe": "CWE-",
+            "snippet": "// TODO"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_interface/src/wifi_card_discovery.cpp",
+            "line": 284,
+            "cwe": "CWE-",
+            "snippet": "// hack not support the channel in monitor mode"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/AirTelemetry.cpp",
+            "line": 75,
+            "cwe": "CWE-",
+            "snippet": "// NOTE: Remember there is a hack in place for rc channels override in regards"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/mav_helper.h",
+            "line": 70,
+            "cwe": "CWE-",
+            "snippet": "* TODO: should we also consider the component id ? Right now, we don't really"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/internal/OHDMainComponent.cpp",
+            "line": 101,
+            "cwe": "CWE-",
+            "snippet": "// TODO have an ack response."
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/internal/OnboardComputerStatusProvider.cpp",
+            "line": 385,
+            "cwe": "CWE-",
+            "snippet": "// Convert the 1337 hack to cleaner enum"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/mavsdk_temporary/mavlink_parameter_receiver.cpp",
+            "line": 181,
+            "cwe": "CWE-",
+            "snippet": "// TODO it is ambiguous if we should send a PARAM_ACK_VALUE_UNSUPPORTED"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/mavsdk_temporary/mavlink_parameter_receiver.h",
+            "line": 138,
+            "cwe": "CWE-",
+            "snippet": "* request 3) TODO what to do if the value to set matches the current value."
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/mavsdk_temporary/mavlink_parameter_subscription.h",
+            "line": 13,
+            "cwe": "CWE-",
+            "snippet": "// make this class A \"MavlinkParameterSet\" so to say where set_xxx properly"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_telemetry/src/mavsdk_temporary/param_value.cpp",
+            "line": 195,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: this function can collapse with the one above."
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/inc/air_recording_helper.hpp",
+            "line": 37,
+            "cwe": "CWE-",
+            "snippet": "// TODO what about the following:"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/inc/camera_holder.h",
+            "line": 53,
+            "cwe": "CWE-",
+            "snippet": "// Settings hacky begin"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/inc/camera_settings.hpp",
+            "line": 175,
+            "cwe": "CWE-",
+            "snippet": "// TODO - some platforms (only) flip, some platforms rotate the full range"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/inc/gst_helper.hpp",
+            "line": 146,
+            "cwe": "CWE-",
+            "snippet": "// a createXXXStream function always ends wth an encoded \"h264,h265"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/inc/gst_recorder.h",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "// TODO for some reason, I cannot make fucking appsrc work !"
+          },
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/inc/libcamera_detect.hpp",
+            "line": 38,
+            "cwe": "CWE-",
+            "snippet": "// TODO check more sensors here or use a regex / better method"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "desktop-truster.sh",
+            "line": 25,
+            "cwe": "CWE-1188",
+            "snippet": "# Trust all desktop files"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_common/inc/openhd_config.h",
+            "line": 61,
+            "cwe": "CWE-798",
+            "snippet": "std::string MICROHARD_PASSWORD = \"qwertz1\";"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_common/inc/openhd_sock.h",
+            "line": 113,
+            "cwe": "CWE-798",
+            "snippet": "std::string microhard_password = \"qwertz1\";"
+          },
+          {
+            "severity": "high",
+            "file": "OpenHD/ohd_interface/src/microhard_link.cpp",
+            "line": 70,
+            "cwe": "CWE-798",
+            "snippet": "const std::string password = \"qwertz1\\n\";"
+          }
+        ]
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/librtp/inc/rtp-ext.h",
+            "line": 149,
+            "cwe": "CWE-319",
+            "snippet": "RTP_HDREXT_VIDEO_ORIENTATION_ID,            // urn:3gpp:video-orientation (http://www.etsi.org/deliver/etsi_ts/126100_126199/126114/12.07.00_60/ts_126114v120700p.pdf)"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 1,
+    "files_with_findings": 1,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 1
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "OpenHD/ohd_video/librtp/inc/rtp-ext.h",
+            "line": 233,
+            "cwe": "CWE-",
+            "snippet": "uint8_t range_chroma_siting; // https://www.webmproject.org/docs/container/#colour"
+          }
+        ]
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:b044a2a8-faba-5a23-8bfd-fbfad28dbeb0",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T15:00:42Z",
+      "component": {
+        "type": "application",
+        "name": "OPENHD",
+        "version": "f07729b35e27",
+        "bom-ref": "pkg:generic/anticloud/OPENHD@f07729b35e27",
+        "purl": "pkg:generic/anticloud/OPENHD@f07729b35e27",
+        "licenses": [
+          {
+            "license": {
+              "id": "GPL-3.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "f07729b35e273fe3612e1aade030a7a86350d1ac"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/OpenHD/OpenHD"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "Threads",
+        "version": "unspecified",
+        "purl": "pkg:generic/Threads",
+        "bom-ref": "native/Threads@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Poco",
+        "version": "unspecified",
+        "purl": "pkg:generic/Poco",
+        "bom-ref": "native/Poco@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "spdlog",
+        "version": "unspecified",
+        "purl": "pkg:generic/spdlog",
+        "bom-ref": "native/spdlog@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "SDL2",
+        "version": "unspecified",
+        "purl": "pkg:generic/SDL2",
+        "bom-ref": "native/SDL2@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "PkgConfig",
+        "version": "unspecified",
+        "purl": "pkg:generic/PkgConfig",
+        "bom-ref": "native/PkgConfig@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "LIBCAMERA",
+        "version": "unspecified",
+        "purl": "pkg:generic/LIBCAMERA",
+        "bom-ref": "native/LIBCAMERA@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Curses",
+        "version": "unspecified",
+        "purl": "pkg:generic/Curses",
+        "bom-ref": "native/Curses@unspecified"
+      }
+    ]
+  },
+  "elapsed_seconds": 309.98
+}
