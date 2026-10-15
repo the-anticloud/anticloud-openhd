@@ -2,9 +2,7 @@
 
 > This directory contains the full 30-folder standard documentation set for `OPENHD`:
 
-**Category:** CONSUMER_ELECTRONICS · **Ecosystem:** python · **Vendored upstream:** https://github.com/wheelos-euc/OpenHDMap · **Pinned commit:** `a89e6d7bf2505e64afd7041b7b5db6ecc7556096` · **Vendor:** Anticloud FZ LLE
-
-> **Note:** this package vendors `https://github.com/wheelos-euc/OpenHDMap` as the implementation for the `OPENHD` slot. The vendored repository name differs from the package name; the pin above is the exact commit vendored here.
+**Category:** CONSUMER_ELECTRONICS · **Ecosystem:** python · **Vendored upstream:** https://github.com/OpenHD/OpenHD · **Pinned commit:** `f07729b35e273fe3612e1aade030a7a86350d1ac` · **Vendor:** Anticloud FZ LLE
 
 ## What This Project Is
 
@@ -63,7 +61,7 @@ The upstream licence is preserved in `LICENSE` and `THIRD_PARTY_LICENSES/`. The 
 SHA3-256 of `BENCH.json`:
 
 ```
-f8b03d8988b4ae13ddba7e0f76333ddc268d32b0ff07dde0db8aa5f53ed737ca
+d6833b9405d3671080a56b635d7fb00e28bf94e59f28d3a4620e2df1bd06ad81
 ```
 
 Recompute the hash above and compare — any drift means the package has been tampered with and the seal is invalid. This is a self-assessment; no external audit has been performed and a SOC 2 / NIST independent audit is committed post-funding.

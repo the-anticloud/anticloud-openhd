@@ -540,9 +540,10 @@
  "version": "1.0.0",
  "source": {
   "git": {
-   "head": "a89e6d7bf2505e64afd7041b7b5db6ecc7556096",
-   "url": "https://github.com/wheelos-euc/OpenHDMap",
-   "sha_verified_from": "agent_alternatives2.json/alternative_found | unified 2026-10-14 (API-exists + content/clone anchor)"
+   "url": "https://github.com/OpenHD/OpenHD",
+   "head": "f07729b35e273fe3612e1aade030a7a86350d1ac",
+   "sha_verified_from": "revendor 2026-10-15: GitHub API commit lookup",
+   "previous_substitute": "https://github.com/wheelos-euc/OpenHDMap"
   }
  }
 }
