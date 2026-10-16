@@ -543,7 +543,7 @@
    "url": "https://github.com/OpenHD/OpenHD",
    "head": "f07729b35e273fe3612e1aade030a7a86350d1ac",
    "sha_verified_from": "revendor 2026-10-15: GitHub API commit lookup",
-   "previous_substitute": "https://github.com/wheelos-euc/OpenHDMap"
+   "previous_substitute": "https://github.com/OpenHD/OpenHD"
   }
  }
 }
